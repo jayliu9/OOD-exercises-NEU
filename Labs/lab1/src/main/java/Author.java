@@ -5,7 +5,7 @@
  *
  */
 public class Author {
-    private String name;
+    private Person name;
     private String email;
     private String address;
     /**
@@ -15,7 +15,7 @@ public class Author {
      * @param email the author's email address
      * @param address the authors physical address
      */
-    public Author(String name, String email, String address) {
+    public Author(Person name, String email, String address) {
         this.name = name;
         this.email = email;
         this.address = address;
@@ -24,7 +24,7 @@ public class Author {
      * @return the name
      */
     public String getName() {
-        return this.name;
+        return this.name.getFirstName() + " " + this.name.getLastName();
     }
     /**
      * @return the email

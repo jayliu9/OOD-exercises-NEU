@@ -14,7 +14,7 @@ public class Author {
     private String address;
 
     /**
-     * Creates an Author object and initialize it with the given name, email and address
+     * Creates an Author object and initializes it with the given name, email and address
      * @param name the author's name
      * @param email the author's email address
      * @param address the author's physical address

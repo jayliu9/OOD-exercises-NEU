@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PersonTest {
-    private Person harry;
+    Person harry;
 
     @Before
     public void setUp() throws Exception {

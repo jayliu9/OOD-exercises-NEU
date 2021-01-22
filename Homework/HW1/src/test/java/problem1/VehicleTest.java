@@ -25,10 +25,13 @@ public class VehicleTest {
 
     @Test
     public void setVIN() throws Exception {
-        assertEquals();
+        aCar.setVIN(88664422);
+        assertEquals((Integer) 88664422, aCar.getVIN());
     }
 
     @Test
     public void setLicensePlate() throws Exception {
+        aCar.setLicensePlate("GH8642");
+        assertEquals("GH8642", aCar.getLicensePlate());
     }
 }

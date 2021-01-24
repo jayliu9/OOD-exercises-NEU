@@ -29,8 +29,8 @@ public class Author {
      * Gets this author's name
      * @return the name
      */
-    public String getName() {
-        return this.name.getFirstName() + " " + this.name.getLastName();
+    public Person getName() {
+        return this.name;
     }
 
     /**

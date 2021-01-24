@@ -13,7 +13,8 @@ public class AuthorTest {
 
     @Test
     public void getName() throws Exception {
-        assertEquals("Jeff Tommy", jeff.getName());
+        assertEquals("Jeff", jeff.getName().getFirstName());
+        assertEquals("Tommy", jeff.getName().getLastName());
     }
 
     @Test

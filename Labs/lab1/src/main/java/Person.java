@@ -27,14 +27,30 @@ public class Person {
      * @return the first name of this person
      */
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     /**
      * Gets the last name of this person
-     * @return the first name of this person
+     * @return the last name of this person
      */
     public String getLastName() {
-        return lastName;
+        return this.lastName;
+    }
+
+    /**
+     * Sets the first name of this person
+     * @param firstName the new first name
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    /**
+     * Sets the last name of this person
+     * @param lastName the new last name
+     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

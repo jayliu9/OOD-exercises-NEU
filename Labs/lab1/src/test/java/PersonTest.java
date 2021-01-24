@@ -20,4 +20,16 @@ public class PersonTest {
     public void getLastName() {
         assertEquals("Potter", harry.getLastName());
     }
+
+    @Test
+    public void setFirstName() {
+        harry.setFirstName("A");
+        assertEquals("A", harry.getFirstName());
+    }
+
+    @Test
+    public void setLastName() {
+        harry.setLastName("Z");
+        assertEquals("Z", harry.getLastName());
+    }
 }

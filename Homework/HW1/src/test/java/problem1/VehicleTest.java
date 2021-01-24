@@ -41,4 +41,12 @@ public class VehicleTest {
         car.setLicensePlate("GH8642");
         assertEquals("GH8642", car.getLicensePlate());
     }
+
+    @Test
+    public void setVehicleOwner() throws Exception {
+        car.setVehicleOwner(new Owner("New", "Owner", "9988776655"));
+        assertEquals("New", car.getVehicleOwner().getFirstName());
+        assertEquals("Owner", car.getVehicleOwner().getLastName());
+        assertEquals("9988776655", car.getVehicleOwner().getPhoneNumber());
+    }
 }

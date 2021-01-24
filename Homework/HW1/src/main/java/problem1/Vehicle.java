@@ -11,28 +11,31 @@ package problem1;
  * (VIN), corresponding license plate and an Owner.
  */
 public class Vehicle {
-    private Integer VIN;
+    private Integer vIN;
     private String licensePlate;
     private Owner vehicleOwner;
+
     /**
      * Constructor that creates a new vehicle object with the specified VIN and
      * license plate.
-     * @param VIN - VIN of the new Vehicle object.
+     * @param vIN - VIN of the new Vehicle object.
      * @param licensePlate - license plate of the new Vehicle.
      * @param vehicleOwner - owner of the new Vehicle.
      */
-    public Vehicle(Integer VIN, String licensePlate, Owner vehicleOwner) {
-        this.VIN = VIN;
+    public Vehicle(Integer vIN, String licensePlate, Owner vehicleOwner) {
+        this.vIN = vIN;
         this.licensePlate = licensePlate;
         this.vehicleOwner = vehicleOwner;
     }
+
     /**
      * Returns the VIN of the Vehicle.
      * @return the VIN of the Vehicle.
      */
     public Integer getVIN() {
-        return this.VIN;
+        return this.vIN;
     }
+
     /**
      * Returns the licensePlate of the Vehicle.
      * @return the licensePlate of the Vehicle.
@@ -40,6 +43,7 @@ public class Vehicle {
     public String getLicensePlate() {
         return this.licensePlate;
     }
+
     /**
      * Returns the Owner of the Vehicle.
      * @return the Owner of the Vehicle.
@@ -47,22 +51,23 @@ public class Vehicle {
     public Owner getVehicleOwner() {
         return this.vehicleOwner;
     }
+
     /**
      * Sets the VIN of the Vehicle.
-     * @param VIN - the new VIN.
+     * @param vIN - the new VIN.
      */
-
-    public void setVIN(Integer VIN) {
-        this.VIN = VIN;
+    public void setVIN(Integer vIN) {
+        this.vIN = vIN;
     }
+
     /**
      * Sets the licensePlate of the Vehicle.
      * @param licensePlate - the new license plate.
-     *
      */
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
     }
+
     /**
      * Sets the Owner of the Vehicle.
      * @param vehicleOwner - the new Owner.

@@ -50,6 +50,7 @@ public class Owner {
     public String getFirstName() {
         return this.firstName;
     }
+
     /**
      * Returns the last name of this Owner
      * @return the last name of this Owner
@@ -57,6 +58,7 @@ public class Owner {
     public String getLastName() {
         return this.lastName;
     }
+
     /**
      * Returns the phone number of this Owner
      * @return the phone number of this Owner
@@ -64,6 +66,7 @@ public class Owner {
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
+
     /**
      * Sets the first name of the Owner.
      * @param firstName - the new first name.
@@ -71,6 +74,7 @@ public class Owner {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     /**
      * Sets the last name of the Owner.
      * @param lastName - the new last name.
@@ -78,6 +82,7 @@ public class Owner {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
     /**
      * Sets the phone number of the Owner.
      * @param phoneNumber - the new phone number.

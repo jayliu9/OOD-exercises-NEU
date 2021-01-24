@@ -1,8 +1,14 @@
 package problem1;
 
 /**
+ * Name: Shijie Liu
+ * NUID: 001561546
+ * Course: CS 5004
+ * Course Number: 38097
+ * Semester: Spring 2021
+ *
  * Vehicle is a simple object that has a unique Vehicle Identification Number
- (VIN), and corresponding license plate.
+ * (VIN), corresponding license plate and an Owner.
  */
 public class Vehicle {
     private Integer VIN;
@@ -34,40 +40,16 @@ public class Vehicle {
     public String getLicensePlate() {
         return this.licensePlate;
     }
-
+    /**
+     * Returns the Owner of the Vehicle.
+     * @return the Owner of the Vehicle.
+     */
     public Owner getVehicleOwner() {
         return this.vehicleOwner;
     }
-
-    /**
-     * Forms the full name using the given first name and last name.
-     * @param firstName the given first name
-     * @param lastName the given last name
-     * @return the full name.
-
-    private String formFullName(String firstName, String lastName) {
-        String WHITESPACE = " ";
-        return firstName + WHITESPACE + lastName;
-    }
-
-    /**
-     * Returns the Owner's name of this Vehicle
-     * @return the Owner's name of this Vehicle
-
-    public String getOwnerName() {
-        return this.formFullName(this.vehicleOwner.getFirstName(), this.vehicleOwner.getLastName());
-    }
-
-    /**
-     * Returns the Owner's phone number of this Vehicle
-     * @return the Owner's phone number of this Vehicle
-
-    public String getOwnerPhoneNum() {
-        return this.vehicleOwner.getPhoneNumber();
-    }
-
     /**
      * Sets the VIN of the Vehicle.
+     * @param VIN - the new VIN.
      */
 
     public void setVIN(Integer VIN) {
@@ -75,11 +57,16 @@ public class Vehicle {
     }
     /**
      * Sets the licensePlate of the Vehicle.
+     * @param licensePlate - the new license plate.
+     *
      */
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
     }
-
+    /**
+     * Sets the Owner of the Vehicle.
+     * @param vehicleOwner - the new Owner.
+     */
     public void setVehicleOwner(Owner vehicleOwner) {
         this.vehicleOwner = vehicleOwner;
     }

@@ -10,9 +10,9 @@ public class Time {
     private static final int MAX_MINUTE_OR_SEC = 59;
 
     public Time(int hour, int minutes, int seconds) {
-        this.hour = hour;
-        this.minutes = minutes;
-        this.seconds = seconds;
+        this.hour = this.validateHour(hour);
+        this.minutes = this.validateMinOrSec(minutes);
+        this.seconds = this.validateMinOrSec(seconds);
     }
 
     private int validateHour(int hour) {
@@ -41,5 +41,17 @@ public class Time {
 
     public int getSeconds() {
         return this.seconds;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public void setMinutes(int minutes) {
+        this.minutes = minutes;
+    }
+
+    public void setSeconds(int seconds) {
+        this.seconds = seconds;
     }
 }

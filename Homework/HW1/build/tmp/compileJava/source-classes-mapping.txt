@@ -2,3 +2,7 @@ problem1/Owner.java
  problem1.Owner
 problem1/Vehicle.java
  problem1.Vehicle
+problem2/Time.java
+ problem2.Time
+problem2/Trip.java
+ problem2.Trip

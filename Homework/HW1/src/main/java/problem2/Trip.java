@@ -52,11 +52,11 @@ public class Trip {
         if (this.areValidStartEnd(this.startTime, this.endTime)) {
             int startTimeInSec = this.expressTimeAsSec(startTime);
             int endTimeInSec = this.expressTimeAsSec(endTime);
-            int secDifference = calculateDifference(startTimeInSec, endTimeInSec);
-            if (secDifference != DEFAULT_VALUE) {
-                int durationHour = secDifference / SEC_PER_HOUR;
-                int durationMin = (secDifference % SEC_PER_HOUR) / SEC_PER_MIN;
-                int durationSec = secDifference % SEC_PER_HOUR % SEC_PER_MIN;
+            int totalSecDifference = calculateDifference(startTimeInSec, endTimeInSec);
+            if (totalSecDifference != DEFAULT_VALUE) {
+                int durationHour = totalSecDifference / SEC_PER_HOUR;
+                int durationMin = (totalSecDifference % SEC_PER_HOUR) / SEC_PER_MIN;
+                int durationSec = totalSecDifference % SEC_PER_HOUR % SEC_PER_MIN;
                 return new Time(durationHour, durationMin, durationSec);
             }
         }

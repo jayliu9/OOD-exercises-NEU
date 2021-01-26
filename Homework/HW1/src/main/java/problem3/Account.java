@@ -4,6 +4,7 @@ public class Account {
     private String firstName;
     private String lastName;
     private Amount accountBalance;
+    private static final int DOLLAR_TO_CENT = 100;
 
     public Account(String firstName, String lastName, Amount accountBalance) {
         this.firstName = firstName;
@@ -33,5 +34,16 @@ public class Account {
 
     public Account changeAccountBalance(Amount accountBalance) {
         return new Account(this.firstName, lastName, accountBalance);
+    }
+
+    public Account deposit(Amount depositedMoney) {
+        int dollarToAdd = depositedMoney.getDollar();
+        int centToAdd = depositedMoney.getCent();
+        int centOfIncreasedBalance = (centToAdd + this.accountBalance.getCent()) % DOLLAR_TO_CENT;
+        int carryOfDollar = (centToAdd + this.accountBalance.getCent()) / DOLLAR_TO_CENT;
+        int dollarOfIncreasedBalance = this.accountBalance.getDollar() + dollarToAdd + carryOfDollar;
+        Amount increasedAccountBalance = this.accountBalance.changeCent(centOfIncreasedBalance)
+                .changeDollar(dollarOfIncreasedBalance);
+        return this.changeAccountBalance(increasedAccountBalance);
     }
 }

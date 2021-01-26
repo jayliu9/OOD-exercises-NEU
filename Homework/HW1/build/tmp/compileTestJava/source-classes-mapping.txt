@@ -1,8 +1,8 @@
-problem2/TimeTest.java
- problem2.TimeTest
-problem1/OwnerTest.java
- problem1.OwnerTest
 problem1/VehicleTest.java
  problem1.VehicleTest
+problem1/OwnerTest.java
+ problem1.OwnerTest
 problem2/TripTest.java
  problem2.TripTest
+problem2/TimeTest.java
+ problem2.TimeTest

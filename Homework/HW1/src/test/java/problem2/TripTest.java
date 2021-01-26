@@ -7,24 +7,12 @@ import static org.junit.Assert.*;
 
 public class TripTest {
     Trip tripOfHarry;
-    Trip invalidStartHourTrip;
-    Trip invalidStartMinTrip;
-    Trip invalidStartSecTrip;
-    Trip invalidEndHourTrip;
-    Trip invalidEndMinTrip;
-    Trip invalidEndSecTrip;
-    Trip invalidDifferenceTrip;
+    Trip invalidDurationTrip;
 
     @Before
     public void setUp() throws Exception {
         tripOfHarry = new Trip("Spain","Portugal", new Time(9,35,49), new Time(22, 20,34));
-        invalidStartHourTrip = new Trip("Spain", "Portugal", new Time(40, 33, 22), new Time(19, 32,4));
-        invalidStartMinTrip = new Trip("Spain", "Portugal", new Time(11, -5, 22), new Time(19, 32,4));
-        invalidStartSecTrip = new Trip("Spain", "Portugal", new Time(11, 40, 82), new Time(19, 32,4));
-        invalidEndHourTrip = new Trip("Spain", "Portugal", new Time(7,22,19), new Time(-2,59,30));
-        invalidEndMinTrip = new Trip("Spain", "Portugal", new Time(7,22,19), new Time(23,78,21));
-        invalidEndSecTrip = new Trip("Spain", "Portugal", new Time(7,22,19), new Time(2,59,-30));
-        invalidDifferenceTrip = new Trip("France", "Italy", new Time(20,53,9), new Time(20,24,55));
+        invalidDurationTrip = new Trip("France", "Italy", new Time(20,53,9), new Time(20,24,55));
     }
 
     @Test
@@ -57,33 +45,9 @@ public class TripTest {
         assertEquals(44, tripOfHarry.getDuration().getMinutes());
         assertEquals(45, tripOfHarry.getDuration().getSeconds());
 
-        assertEquals(-1, invalidStartHourTrip.getDuration().getHour());
-        assertEquals(-1, invalidStartHourTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidStartHourTrip.getDuration().getSeconds());
-
-        assertEquals(-1, invalidStartMinTrip.getDuration().getHour());
-        assertEquals(-1, invalidStartMinTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidStartMinTrip.getDuration().getSeconds());
-
-        assertEquals(-1, invalidStartSecTrip.getDuration().getHour());
-        assertEquals(-1, invalidStartSecTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidStartSecTrip.getDuration().getSeconds());
-
-        assertEquals(-1, invalidEndHourTrip.getDuration().getHour());
-        assertEquals(-1, invalidEndHourTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidEndHourTrip.getDuration().getSeconds());
-
-        assertEquals(-1, invalidEndMinTrip.getDuration().getHour());
-        assertEquals(-1, invalidEndMinTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidEndMinTrip.getDuration().getSeconds());
-
-        assertEquals(-1, invalidEndSecTrip.getDuration().getHour());
-        assertEquals(-1, invalidEndSecTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidEndSecTrip.getDuration().getSeconds());
-
-        assertEquals(-1, invalidDifferenceTrip.getDuration().getHour());
-        assertEquals(-1, invalidDifferenceTrip.getDuration().getMinutes());
-        assertEquals(-1, invalidDifferenceTrip.getDuration().getSeconds());
+        assertEquals(0, invalidDurationTrip.getDuration().getHour());
+        assertEquals(0, invalidDurationTrip.getDuration().getMinutes());
+        assertEquals(0, invalidDurationTrip.getDuration().getSeconds());
     }
 
     @Test

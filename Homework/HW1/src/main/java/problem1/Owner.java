@@ -31,9 +31,9 @@ public class Owner {
 
     /**
      * Helper method that ensures the phone number is valid. If the phone number is invalid, the default phone number is
-     * returned.
+     * returned. The default phone number is 0000000000
      * @param phoneNum - the phone number to validate
-     * @return the validated phone number if the phone number is valid, the default phone number otherwise.
+     * @return the validated phone number if the phone number is valid. Otherwise the default phone number.
      */
     private String validatePhoneNum(String phoneNum) {
         if (phoneNum.length() == REQUIRED_LENGTH) {
@@ -68,7 +68,7 @@ public class Owner {
     }
 
     /**
-     * Sets the first name of the Owner.
+     * Sets the first name of this Owner.
      * @param firstName - the new first name.
      */
     public void setFirstName(String firstName) {
@@ -76,7 +76,7 @@ public class Owner {
     }
 
     /**
-     * Sets the last name of the Owner.
+     * Sets the last name of this Owner.
      * @param lastName - the new last name.
      */
     public void setLastName(String lastName) {
@@ -84,7 +84,7 @@ public class Owner {
     }
 
     /**
-     * Sets the phone number of the Owner.
+     * Sets the phone number of this Owner.
      * @param phoneNumber - the new phone number.
      */
     public void setPhoneNumber(String phoneNumber) {

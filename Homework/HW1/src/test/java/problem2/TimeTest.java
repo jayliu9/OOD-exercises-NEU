@@ -56,13 +56,13 @@ public class TimeTest {
 
     @Test
     public void validateHour() throws Exception {
-        assertEquals(-1, tooManyHour.getHour());
-        assertEquals(-1, tooFewHour.getHour());
+        assertEquals(0, tooManyHour.getHour());
+        assertEquals(0, tooFewHour.getHour());
     }
 
     @Test
     public void validateMinOrSec() throws Exception {
-        assertEquals(-1, tooManyMin.getMinutes());
-        assertEquals(-1, tooFewSec.getSeconds());
+        assertEquals(0, tooManyMin.getMinutes());
+        assertEquals(0, tooFewSec.getSeconds());
     }
 }

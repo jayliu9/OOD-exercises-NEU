@@ -2,6 +2,7 @@ package problem1;
 
 import org.junit.Before;
 import org.junit.Test;
+import sun.font.TrueTypeFont;
 
 import static org.junit.Assert.*;
 
@@ -10,12 +11,13 @@ public class VehicleTest {
 
     @Before
     public void setUp() throws Exception {
-        car = new Vehicle(22446688, "CD2468", new Owner("Harry", "Potter", "9876543210"));
+        Owner owner = new Owner("Harry", "Potter", "9876543210");
+        car = new Vehicle(22446688, "CD2468", owner);
     }
 
     @Test
     public void getVIN() throws Exception {
-        assertEquals((Integer) 22446688, car.getVIN());
+        assertEquals(Integer.valueOf(22446688), this.car.getVIN());
     }
 
     @Test

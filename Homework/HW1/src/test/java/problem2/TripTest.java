@@ -11,8 +11,12 @@ public class TripTest {
 
     @Before
     public void setUp() throws Exception {
-        tripOfHarry = new Trip("Spain","Portugal", new Time(9,35,49), new Time(22, 20,34));
-        invalidDurationTrip = new Trip("France", "Italy", new Time(20,53,9), new Time(20,24,55));
+        Time validStartingTime = new Time(9,35,49);
+        Time validEndTime = new Time(22, 20,34);
+        tripOfHarry = new Trip("Spain","Portugal", validStartingTime, validEndTime);
+        Time laterStartingTime =  new Time(20,53,9);
+        Time earlierEndTime =  new Time(20,24,55);
+        invalidDurationTrip = new Trip("France", "Italy", laterStartingTime, earlierEndTime);
     }
 
     @Test

@@ -49,7 +49,7 @@ public class OwnerTest {
     }
 
     @Test
-    public void validatePhoneNum() throws Exception {
+    public void invalidPhoneNum() throws Exception {
         assertEquals("0000000000", invalidNum.getPhoneNumber());
     }
 }

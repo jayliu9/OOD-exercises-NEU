@@ -1,13 +1,13 @@
 package problem1;
 
 /**
- * problem1.Name: Shijie Liu
+ * Name: Shijie Liu
  * NUID: 001561546
  * Course: CS 5005
  * Course Number: 38135
  * Semester: Spring 2021
  *
- * This class represents a baseball player. problem1.BaseballPlayer is a subclass of problem1.Athlete. The baseball
+ * This class represents a baseball player. BaseballPlayer is a subclass of Athlete. The baseball
  * player also has a team, an average batting and season home runs.
  */
 public class BaseballPlayer extends Athlete {
@@ -18,8 +18,8 @@ public class BaseballPlayer extends Athlete {
   private Integer seasonHomeRun;
 
   /**
-   * Constructs a new problem1.Runner object, based upon all of the provided input parameters.
-   * @param athletesName The baseball player's problem1.Name
+   * Constructs a new Runner object, based upon all of the provided input parameters.
+   * @param athletesName The baseball player's Name
    * @param height The baseball player's height
    * @param weight The baseball player's weigh
    * @param league The baseball player's league
@@ -36,8 +36,8 @@ public class BaseballPlayer extends Athlete {
   }
 
   /**
-   * Constructs a new problem1.Runner object, based upon all of the provided input parameters.
-   * @param athletesName The baseball player's problem1.Name
+   * Constructs a new Runner object, based upon all of the provided input parameters.
+   * @param athletesName The baseball player's Name
    * @param height The baseball player's height
    * @param weight The baseball player's weigh
    * @param team The baseball player's team

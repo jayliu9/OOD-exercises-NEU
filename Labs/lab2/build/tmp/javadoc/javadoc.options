@@ -4,7 +4,7 @@
 -notimestamp 
 -quiet 
 -windowtitle 'lab2 1.0-SNAPSHOT API'
-'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\Athlete.java'
-'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\BaseballPlayer.java'
-'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\Name.java'
-'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\Runner.java'
+'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\problem1\\Athlete.java'
+'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\problem1\\BaseballPlayer.java'
+'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\problem1\\Name.java'
+'D:\\cs5004ood\\Shijie_Liu_repository\\Labs\\lab2\\src\\main\\java\\problem1\\Runner.java'

@@ -1,7 +1,11 @@
+package problem1;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import problem1.Athlete;
+import problem1.Name;
 
 public class AthleteTest {
   Athlete withLeague;

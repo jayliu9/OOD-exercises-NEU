@@ -1,8 +1,8 @@
-Runner.java
- Runner
-Name.java
- Name
-BaseballPlayer.java
- BaseballPlayer
-Athlete.java
- Athlete
+problem1/Runner.java
+ problem1.Runner
+problem1/BaseballPlayer.java
+ problem1.BaseballPlayer
+problem1/Athlete.java
+ problem1.Athlete
+problem1/Name.java
+ problem1.Name

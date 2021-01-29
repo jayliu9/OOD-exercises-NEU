@@ -1,8 +1,8 @@
-AthleteTest.java
- AthleteTest
-BaseballPlayerTest.java
- BaseballPlayerTest
-RunnerTest.java
- RunnerTest
-NameTest.java
- NameTest
+problem1/AthleteTest.java
+ problem1.AthleteTest
+problem1/NameTest.java
+ problem1.NameTest
+problem1/BaseballPlayerTest.java
+ problem1.BaseballPlayerTest
+problem1/RunnerTest.java
+ problem1.RunnerTest

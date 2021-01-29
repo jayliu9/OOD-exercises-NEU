@@ -1,5 +1,7 @@
+package problem1;
+
 /**
- * Class Athlete contains information about an athlete, including athlete's name, their height, weight and league.
+ * Class problem1.Athlete contains information about an athlete, including athlete's name, their height, weight and league.
  */
 public class Athlete {
 
@@ -10,7 +12,7 @@ public class Athlete {
 
   /**
    * Constructs a new athlete, based upon all of the provided input parameters.
-   * @param athletesName The athlete's Name, containing athlete's first, middle and last name
+   * @param athletesName The athlete's problem1.Name, containing athlete's first, middle and last name
    * @param height The athlete's height, expressed as a Double in cm (e.g., 6'2'' is recorded as 187.96cm)
    * @param weight The athlete's weigh, expressed as a Double in pounds (e.g. 125, 155, 200 pounds)
    * @param league The athelete's league, expressed as String
@@ -24,7 +26,7 @@ public class Athlete {
 
   /**
    * Constructs a new athlete, based upon all of the provided input parameters.
-   * @param athletesName The object Name, containing athlete's first, middle and last name
+   * @param athletesName The object problem1.Name, containing athlete's first, middle and last name
    * @param height The athlete's height, expressed as a Double in cm (e.g., 6'2'' is recorded as 187.96cm)
    * @param weight The athlete's weigh, expressed as a Double in pounds (e.g. 125, 155, 200 pounds)
    */
@@ -36,8 +38,8 @@ public class Athlete {
   }
 
   /**
-   * Returns athlete's name as an object Name
-   * @return The Athlete's Name
+   * Returns athlete's name as an object problem1.Name
+   * @return The problem1.Athlete's problem1.Name
    */
   public Name getAthletesName() {
     return athletesName;
@@ -45,7 +47,7 @@ public class Athlete {
 
   /**
    * Returns athlete's height as a Double
-   * @return The Athlete's height
+   * @return The problem1.Athlete's height
    */
   public Double getHeight() {
     return height;
@@ -53,7 +55,7 @@ public class Athlete {
 
   /**
    * Returns athlete's weight as a Double
-   * @return The Athlete's weight
+   * @return The problem1.Athlete's weight
    */
   public Double getWeight() {
     return weight;
@@ -61,7 +63,7 @@ public class Athlete {
 
   /**
    * Returns athlete's league as a String
-   * @return The Athlete's league
+   * @return The problem1.Athlete's league
    */
   public String getLeague() {
     return league;

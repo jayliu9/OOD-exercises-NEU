@@ -20,8 +20,13 @@ public class RoomTest {
   }
 
   @Test(expected = InvalidGuestNumException.class)
-  public void invalidGuestNum() throws InvalidGuestNumException, OccupiedRoomException {
+  public void tooManyGuestNum() throws InvalidGuestNumException, OccupiedRoomException {
     availableRoom.bookRoom(5);
+  }
+
+  @Test(expected = InvalidGuestNumException.class)
+  public void negativeGuestNum() throws InvalidGuestNumException, OccupiedRoomException {
+    availableRoom.bookRoom(-5);
   }
 
   @Test(expected = OccupiedRoomException.class)

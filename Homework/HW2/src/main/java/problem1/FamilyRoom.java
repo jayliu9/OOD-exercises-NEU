@@ -4,7 +4,7 @@ public class FamilyRoom extends Room {
 
   private static final Integer FAMILY_OCCUPANCY = 4;
 
-  public FamilyRoom(Float price) {
+  public FamilyRoom(Double price) throws InvalidPriceException {
     super(FAMILY_OCCUPANCY, price);
   }
 }

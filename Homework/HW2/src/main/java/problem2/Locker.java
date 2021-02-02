@@ -55,8 +55,13 @@ public class Locker {
     }
   }
 
-  public MailItem pickupMail(Recipient person) {
-
+  public MailItem pickupMail(Recipient person)
+      throws NoMailItemException, MismatchedRecipientException {
+    this.validateStorage();
+    this.validateRecipientMatch(person);
+    MailItem mailItemToPickup = this.mailItem;
+    this.mailItem = null;
+    return mailItemToPickup;
   }
 
   private void validateStorage() throws NoMailItemException {
@@ -69,5 +74,21 @@ public class Locker {
     if (!person.equals(this.mailItem.getRecipient())) {
       throw new MismatchedRecipientException();
     }
+  }
+
+  public Integer getMaxWidth() {
+    return this.maxWidth;
+  }
+
+  public Integer getMaxHeight() {
+    return this.maxHeight;
+  }
+
+  public Integer getMaxDepth() {
+    return this.maxDepth;
+  }
+
+  public MailItem getMailItem() {
+    return this.mailItem;
   }
 }

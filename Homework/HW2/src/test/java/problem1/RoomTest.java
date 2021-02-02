@@ -19,6 +19,12 @@ public class RoomTest {
     assertEquals(Integer.valueOf(3), availableRoom.getGuestNum());
   }
 
+  @Test
+  public void maxPeopleBookRoom() throws InvalidGuestNumException, OccupiedRoomException {
+    availableRoom.bookRoom(4);
+    assertEquals(Integer.valueOf(4), availableRoom.getGuestNum());
+  }
+
   @Test(expected = InvalidGuestNumException.class)
   public void tooManyGuestNum() throws InvalidGuestNumException, OccupiedRoomException {
     availableRoom.bookRoom(5);
@@ -27,6 +33,11 @@ public class RoomTest {
   @Test(expected = InvalidGuestNumException.class)
   public void negativeGuestNum() throws InvalidGuestNumException, OccupiedRoomException {
     availableRoom.bookRoom(-5);
+  }
+
+  @Test(expected = InvalidGuestNumException.class)
+  public void zeroGuestNum() throws InvalidGuestNumException, OccupiedRoomException {
+    availableRoom.bookRoom(0);
   }
 
   @Test(expected = OccupiedRoomException.class)
@@ -51,7 +62,12 @@ public class RoomTest {
   }
 
   @Test(expected = InvalidPriceException.class)
-  public void invalidPrice() throws InvalidPriceException {
+  public void negativePrice() throws InvalidPriceException {
     Room invalidPrice = new Room(3, -10.5);
+  }
+
+  @Test(expected = InvalidPriceException.class)
+  public void zeroPrice() throws InvalidPriceException {
+    Room invalidPrice = new Room(3, 0.0);
   }
 }

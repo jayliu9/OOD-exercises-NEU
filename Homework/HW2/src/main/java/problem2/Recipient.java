@@ -7,13 +7,18 @@ public class Recipient {
   private String lastName;
   private String emailAddress;
 
+  public Recipient(String firstName, String lastName, String emailAddress) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.emailAddress = emailAddress;
+  }
 
   @Override
   public boolean equals(Object object) {
     if (this == object) {
       return true;
     }
-    if (this.getClass() != object.getClass() || object == null) {
+    if (object == null || this.getClass() != object.getClass()) {
       return false;
     }
     Recipient recipient = (Recipient) object;
@@ -32,5 +37,17 @@ public class Recipient {
     result = 31 * result + (this.lastName != null ? this.lastName.hashCode() : 0);
     result = 31 * result + (this.emailAddress != null ? this.emailAddress.hashCode() : 0);
     return result;
+  }
+
+  public String getFirstName() {
+    return this.firstName;
+  }
+
+  public String getLastName() {
+    return this.lastName;
+  }
+
+  public String getEmailAddress() {
+    return this.emailAddress;
   }
 }

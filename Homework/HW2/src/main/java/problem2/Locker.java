@@ -1,10 +1,12 @@
 package problem2;
 
 public class Locker {
+
   private Integer maxWidth;
   private Integer maxHeight;
   private Integer maxDepth;
   private MailItem mailItem;
+  private static final Integer MIN_SIZE = 1;
 
   public Locker(Integer maxWidth, Integer maxHeight, Integer maxDepth)
       throws InvalidDimensionException {
@@ -17,7 +19,6 @@ public class Locker {
 
   private void validateLockerDimensions(Integer maxWidth, Integer maxHeight, Integer maxDepth)
       throws InvalidDimensionException {
-    Integer MIN_SIZE = 1;
     if (maxWidth < MIN_SIZE) {
       throw new InvalidDimensionException("Invalid maximum width of this locker!");
     } else if (maxHeight < MIN_SIZE) {
@@ -43,6 +44,7 @@ public class Locker {
       throw new OccupiedLockerException();
     }
   }
+
   private void validateMailSize(MailItem mailItem) throws OversizedMailItemException {
     Integer widthOfMail = mailItem.getWidth();
     Integer heightOfMail = mailItem.getHeight();

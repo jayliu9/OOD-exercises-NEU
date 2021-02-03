@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class RoomTest {
+
   Room availableRoom;
 
   @Before
@@ -17,6 +18,17 @@ public class RoomTest {
   public void bookRoom() throws InvalidGuestNumException, OccupiedRoomException {
     availableRoom.bookRoom(3);
     assertEquals(Integer.valueOf(3), availableRoom.getGuestNum());
+  }
+
+  @Test
+  public void isAvailable() {
+    assertTrue(availableRoom.isAvailable());
+  }
+
+  @Test
+  public void isNotAvailable() throws InvalidGuestNumException, OccupiedRoomException {
+    availableRoom.bookRoom(3);
+    assertFalse(availableRoom.isAvailable());
   }
 
   @Test

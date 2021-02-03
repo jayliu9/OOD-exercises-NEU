@@ -3,6 +3,7 @@ package problem2;
 import java.util.Objects;
 
 public class Recipient {
+
   private String firstName;
   private String lastName;
   private String emailAddress;
@@ -14,14 +15,14 @@ public class Recipient {
   }
 
   @Override
-  public boolean equals(Object object) {
-    if (this == object) {
+  public boolean equals(Object o) {
+    if (this == o) {
       return true;
     }
-    if (object == null || this.getClass() != object.getClass()) {
+    if (o == null || this.getClass() != o.getClass()) {
       return false;
     }
-    Recipient recipient = (Recipient) object;
+    Recipient recipient = (Recipient) o;
     if (!Objects.equals(this.firstName, recipient.firstName)) {
       return false;
     }

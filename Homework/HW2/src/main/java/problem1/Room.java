@@ -21,7 +21,8 @@ public class Room {
    * The number of guests currently booked into the room. This value should be 0 when the room
    * is first created in the system.
    * @param maxOccupancy The maximum number of people that can stay in the room.
-   * @param price The cost of a single night’s stay. Must be greater than 0
+   * @param price The cost of a single night’s stay. Must be greater than 0.
+   * @throws InvalidPriceException if the price is invalid.
    */
   public Room(Integer maxOccupancy, Double price) throws InvalidPriceException {
     this.maxOccupancy = maxOccupancy;
@@ -31,9 +32,9 @@ public class Room {
   }
 
   /**
-   * Checks that the price is valid. Throws an exception if the price is invalid.
+   * Checks that the price is valid.
    * @param price The price to check
-   * @throws InvalidPriceException
+   * @throws InvalidPriceException if the price is invalid.
    */
   private void validatePrice(Double price) throws InvalidPriceException {
     if (price <= 0) {
@@ -50,8 +51,8 @@ public class Room {
   }
 
   /**
-   * Checks that the room is currently available. Throws an exception if the room is not available.
-   * @throws OccupiedRoomException
+   * Checks that the room is currently available.
+   * @throws OccupiedRoomException if the room is not available.
    */
   private void validateAvailability() throws OccupiedRoomException {
     if (!isAvailable()) {
@@ -60,10 +61,9 @@ public class Room {
   }
 
   /**
-   * Checks that The number of guests is valid. Throws an exception if the number of guests
-   * is invalid.
+   * Checks that the number of guests is valid.
    * @param guestNum The number of guests that would like to stay in a room.
-   * @throws InvalidGuestNumException
+   * @throws InvalidGuestNumException if the number of guests is invalid.
    */
   private void validateGuestNum(Integer guestNum) throws InvalidGuestNumException {
     if (guestNum <= 0 || guestNum > this.maxOccupancy) {
@@ -74,8 +74,8 @@ public class Room {
   /**
    * Books this Room.
    * @param numOfGuest The number of guests that would like to stay in this room
-   * @throws OccupiedRoomException
-   * @throws InvalidGuestNumException
+   * @throws OccupiedRoomException if the room is not available.
+   * @throws InvalidGuestNumException if the number of guests is invalid.
    */
   public void bookRoom(Integer numOfGuest) throws OccupiedRoomException, InvalidGuestNumException {
     this.validateAvailability();
@@ -92,8 +92,8 @@ public class Room {
   }
 
   /**
-   * Gets the price of this Room
-   * @return The price of this Room
+   * Gets the cost of a single night’s stay of this Room
+   * @return The cost of a single night’s stay of this Room
    */
   public Double getPrice() {
     return this.price;

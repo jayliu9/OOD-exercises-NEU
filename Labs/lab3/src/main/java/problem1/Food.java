@@ -28,6 +28,10 @@ public class Food implements FoodItem {
     return this.availableQuantity;
   }
 
+  public Integer getMAX() {
+    return this.MAX;
+  }
+
   private void validateStorage(Integer availableQuantity) throws StorageExcessException {
     if (availableQuantity > this.MAX) {
       throw new StorageExcessException();

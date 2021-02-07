@@ -4,13 +4,13 @@ package problem1;
  *
  */
 public class FoodOrderingSystem {
-  private FoodItem[] foodList;
+  private Food[] foodList;
 
-  public FoodOrderingSystem(FoodItem[] foodList) {
+  public FoodOrderingSystem(Food[] foodList) {
     this.foodList = foodList;
   }
 
-  public FoodItem[] getFoodList() {
+  public Food[] getFoodList() {
     return this.foodList;
   }
 }

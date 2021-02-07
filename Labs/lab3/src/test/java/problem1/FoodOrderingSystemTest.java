@@ -21,6 +21,6 @@ public class FoodOrderingSystemTest {
     assertEquals("Rice", system.getFoodList()[0].getName());
     assertEquals(Double.valueOf(1.0), system.getFoodList()[0].getPricePerUnit());
     assertEquals(Integer.valueOf(200), system.getFoodList()[0].getAvailableQuantity());
-    assertEquals(Integer.valueOf(250), system.getFoodList()[0].getMAX());
+    assertEquals(Integer.valueOf(250), system.getFoodList()[0].getMax());
   }
 }

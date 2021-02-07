@@ -16,6 +16,6 @@ public class RiceTest {
 
   @Test
   public void getMax() {
-    assertEquals(Integer.valueOf(250), rice.getMAX());
+    assertEquals(Integer.valueOf(250), rice.getMax());
   }
 }

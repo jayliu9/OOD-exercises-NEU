@@ -10,6 +10,6 @@ public class GardeningService extends AbstractNonspecialist {
 
   @Override
   protected double extraCharge(double price) {
-    return this.WASTE_REMOVAL_FEE;
+    return WASTE_REMOVAL_FEE;
   }
 }

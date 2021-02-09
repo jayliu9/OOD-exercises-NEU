@@ -14,12 +14,18 @@ public class Painting extends InteriorService {
     switch (this.getSize()) {
       case SMALL:
       case MEDIUM:
-        return this.HOURS_FOR_SMALL_AND_MEDIUM;
+        return HOURS_FOR_SMALL_AND_MEDIUM;
       default:
-        return this.HOURS_FOR_LARGE;
+        return HOURS_FOR_LARGE;
     }
   }
 
-  protected void abc(){
+  /**
+   * Creates a string representation of the InteriorService.
+   * @return a string representation of the InteriorService.
+   */
+  @Override
+  public String toString() {
+    return "Painting: " + super.toString();
   }
 }

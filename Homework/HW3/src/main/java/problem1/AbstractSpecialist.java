@@ -1,6 +1,7 @@
 package problem1;
 
 import com.sun.org.apache.xpath.internal.operations.Minus;
+import java.util.Objects;
 
 public abstract class AbstractSpecialist extends AbstractPropertyService {
 
@@ -44,14 +45,38 @@ public abstract class AbstractSpecialist extends AbstractPropertyService {
     switch(this.getSize()) {
       case SMALL:
       case MEDIUM:
-        return this.EMPLOYEES_FOR_COMPLEX_SMALL_AND_MEDIUM;
+        return EMPLOYEES_FOR_COMPLEX_SMALL_AND_MEDIUM;
       default:
-        return this.EMPLOYEES_FOR_COMPLEX_LARGE;
+        return EMPLOYEES_FOR_COMPLEX_LARGE;
     }
   }
 
   @Override
   protected double calculateDiscount(double price) {
     return 0.0;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!super.equals(o)) {
+      return false;
+    }
+    AbstractSpecialist that = (AbstractSpecialist) o;
+    return this.numOfEmployee == that.numOfEmployee && this.isComplex == that.isComplex;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), this.numOfEmployee, this.isComplex);
+  }
+
+  /**
+   * Creates a string representation of the AbstractSpecialist.
+   * @return a string representation of the AbstractSpecialist.
+   */
+  @Override
+  public String toString() {
+    return super.toString() + ", numOfEmployee = " + this.numOfEmployee
+        + ", isComplex = " + this.isComplex;
   }
 }

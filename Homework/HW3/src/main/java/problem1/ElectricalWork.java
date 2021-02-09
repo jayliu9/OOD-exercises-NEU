@@ -13,12 +13,12 @@ public class ElectricalWork extends AbstractSpecialist {
 
   @Override
   protected double extraCharge(double price) {
-    return this.PERMITTING_FEE_OF_ELECTRICAL;
+    return PERMITTING_FEE_OF_ELECTRICAL;
   }
 
   @Override
   protected int validateEmployee(int numOfEmployee) throws InvalidNumOfEmployees {
-    if (numOfEmployee > this.MAX_NUMBER_OF_EMPLOYEE) {
+    if (numOfEmployee > MAX_NUMBER_OF_EMPLOYEE) {
       throw new InvalidNumOfEmployees("Too much employees!");
     }
     return super.validateEmployee(numOfEmployee);

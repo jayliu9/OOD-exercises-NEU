@@ -13,6 +13,13 @@ public class PlumbingWork extends AbstractSpecialist {
     return PERMITTING_FEE_OF_PLUMBING;
   }
 
-
-
+  /**
+   * Creates a string representation of the AbstractSpecialist.
+   *
+   * @return a string representation of the AbstractSpecialist.
+   */
+  @Override
+  public String toString() {
+    return "PlumbingWork: " + super.toString();
+  }
 }

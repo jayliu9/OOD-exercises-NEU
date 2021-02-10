@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class WindowCleaning extends AbstractNonspecialist {
   private int numOfFloor;
-  private static int MAX_FLOOR = 3;
-  private static int RATE_OF_EXTRA_CHARGE = 5;
+  private static final int MAX_FLOOR = 3;
+  private static final double RATE_OF_EXTRA_CHARGE = 0.05;
 
   public WindowCleaning(String propertyAddress, PropertySize size, boolean isMonthly,
       int numOfServices, int numOfFloor) throws InvalidFloorException {

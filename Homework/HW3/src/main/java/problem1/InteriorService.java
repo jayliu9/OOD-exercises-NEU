@@ -19,9 +19,6 @@ public class InteriorService extends AbstractNonspecialist {
     return this.numOfPets;
   }
 
-  public void setNumOfPets(int numOfPets) {
-    this.numOfPets = numOfPets;
-  }
 
   @Override
   protected double extraCharge(double price) {

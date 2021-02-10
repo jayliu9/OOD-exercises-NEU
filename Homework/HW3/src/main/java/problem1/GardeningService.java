@@ -12,4 +12,13 @@ public class GardeningService extends AbstractNonspecialist {
   protected double extraCharge(double price) {
     return WASTE_REMOVAL_FEE;
   }
+
+  /**
+   * Creates a string representation of the GardeningService.
+   * @return a string representation of the GardeningService.
+   */
+  @Override
+  public String toString() {
+    return "GardeningService: " + super.toString();
+  }
 }

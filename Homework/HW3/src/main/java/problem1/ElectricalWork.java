@@ -23,4 +23,13 @@ public class ElectricalWork extends AbstractSpecialist {
     }
     return super.validateEmployee(numOfEmployee);
   }
+
+  /**
+   * Creates a string representation of the ElectricalWork.
+   * @return a string representation of the ElectricalWork.
+   */
+  @Override
+  public String toString() {
+    return "ElectricalWork: " + super.toString();
+  }
 }

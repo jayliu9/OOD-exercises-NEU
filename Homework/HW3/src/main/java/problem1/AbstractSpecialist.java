@@ -1,6 +1,5 @@
 package problem1;
 
-import com.sun.org.apache.xpath.internal.operations.Minus;
 import java.util.Objects;
 
 public abstract class AbstractSpecialist extends AbstractPropertyService {
@@ -15,8 +14,8 @@ public abstract class AbstractSpecialist extends AbstractPropertyService {
   public AbstractSpecialist(String propertyAddress, PropertySize size, boolean isMonthly,
       int numOfServices, int numOfEmployee, boolean isComplex) throws InvalidNumOfEmployees {
     super(propertyAddress, size, isMonthly, numOfServices);
-    this.numOfEmployee = this.validateEmployee(numOfEmployee);
     this.isComplex = isComplex;
+    this.numOfEmployee = this.validateEmployee(numOfEmployee);
   }
 
   protected int validateEmployee(int numOfEmployee) throws InvalidNumOfEmployees {
@@ -56,6 +55,7 @@ public abstract class AbstractSpecialist extends AbstractPropertyService {
     return 0.0;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (!super.equals(o)) {
@@ -78,5 +78,13 @@ public abstract class AbstractSpecialist extends AbstractPropertyService {
   public String toString() {
     return super.toString() + ", numOfEmployee = " + this.numOfEmployee
         + ", isComplex = " + this.isComplex;
+  }
+
+  public int getNumOfEmployee() {
+    return this.numOfEmployee;
+  }
+
+  public boolean isComplex() {
+    return this.isComplex;
   }
 }

@@ -14,18 +14,25 @@ public class ElectricalWorkTest {
   ElectricalWork tooFewEmployee;
   ElectricalWork complexWorkForLarge;
   ElectricalWork complexWorkForSmall;
+  ElectricalWork isMonthly;
+  ElectricalWork everyTenth;
+  ElectricalWork validNumOfEmployees;
+
 
 
   @Before
   public void setUp() throws Exception {
     electricalWork = new ElectricalWork("Address", PropertySize.LARGE, false, 7, 3,false);
     equalWork =  new ElectricalWork("Address", PropertySize.LARGE, false, 7, 3,false);
+    isMonthly = new ElectricalWork("Address", PropertySize.LARGE, true, 7, 3,false);
+    everyTenth = new ElectricalWork("Address", PropertySize.LARGE, false, 9, 3,false);
     differentNumOfEmployee = new ElectricalWork("Address", PropertySize.LARGE, false, 7, 4,false);
     differentSize = new ElectricalWork("Address", PropertySize.MEDIUM, false, 7, 3,false);
     isNotComplex = new ElectricalWork("Address", PropertySize.LARGE, false, 7, 3,true);
     tooFewEmployee = new ElectricalWork("Address", PropertySize.LARGE, false, 7, 0,false);
     complexWorkForLarge = new ElectricalWork("Address", PropertySize.LARGE, false, 7, 1,true);
     complexWorkForSmall = new ElectricalWork("Address", PropertySize.SMALL, false, 7, 1,true);
+    validNumOfEmployees = new ElectricalWork("Address", PropertySize.MEDIUM, false, 7, 4,true);
   }
 
   @Test
@@ -36,8 +43,15 @@ public class ElectricalWorkTest {
   }
 
   @Test
+  public void checkNumOfEmployees() {
+    assertEquals(4, validNumOfEmployees.getNumOfEmployee());
+
+  }
+  @Test
   public void calculatePrice() {
     assertEquals(650.0, electricalWork.calculatePrice(), 0.000001);
+    assertEquals(650.0, isMonthly.calculatePrice(), 0.000001);
+    assertEquals(650.0, everyTenth.calculatePrice(), 0.000001);
   }
 
   @Test(expected = InvalidNumOfEmployees.class)

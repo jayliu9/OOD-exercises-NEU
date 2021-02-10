@@ -1,5 +1,19 @@
 package problem1;
 
+/**
+ * Enumerates the property size.
+ */
 public enum PropertySize {
-  SMALL, MEDIUM, LARGE
+  /**
+   * Small
+   */
+  SMALL,
+  /**
+   * Medium
+   */
+  MEDIUM,
+  /**
+   * Large
+   */
+  LARGE
 }

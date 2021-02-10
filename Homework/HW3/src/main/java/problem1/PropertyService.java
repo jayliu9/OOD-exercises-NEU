@@ -1,5 +1,8 @@
 package problem1;
 
+/**
+ * An interface specifying required behaviors for a property service.
+ */
 public interface PropertyService {
 
   /**
@@ -7,5 +10,10 @@ public interface PropertyService {
    * @return The total price of the service
    */
   double calculatePrice();
-  int calculateBaseRate();
+
+  /**
+   * Calculates the base price of the service based on specified rules
+   * @return The base price of the service
+   */
+  int calculateBasePrice();
 }

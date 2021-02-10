@@ -46,6 +46,10 @@ public class WindowCleaningTest {
   @Test(expected = InvalidFloorException.class)
   public void invalidNumOfFloor() throws InvalidFloorException {
     WindowCleaning invalidNumOfFloor = new WindowCleaning("Address", PropertySize.SMALL, false, 7, 5);
+  }
 
+  @Test
+  public void getNumOfFloor() {
+    assertEquals(1, smallProperty.getNumOfFloor());
   }
 }

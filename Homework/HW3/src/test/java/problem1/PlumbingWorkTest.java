@@ -7,11 +7,16 @@ import org.junit.Test;
 
 public class PlumbingWorkTest {
   PlumbingWork plumbingWork;
+  PlumbingWork manyEmployees;
+  PlumbingWork isComplexWork;
 
   @Before
   public void setUp() throws Exception {
     plumbingWork = new PlumbingWork("Address", PropertySize.LARGE, false, 7, 3,false);
+    manyEmployees = new PlumbingWork("Address", PropertySize.LARGE, false, 7, 10,false);
+    isComplexWork = new PlumbingWork("Address", PropertySize.LARGE, false, 7, 10,true);
   }
+
 
   @Test
   public void testToString() {
@@ -23,5 +28,7 @@ public class PlumbingWorkTest {
   @Test
   public void calculatePrice() {
     assertEquals(620.0, plumbingWork.calculatePrice(), 0.000001);
+    assertEquals(2020.0, manyEmployees.calculatePrice(), 0.000001);
+    assertEquals(2020.0, isComplexWork.calculatePrice(), 0.000001);
   }
 }

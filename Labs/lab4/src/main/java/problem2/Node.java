@@ -3,7 +3,7 @@ package problem2;
 import java.util.Objects;
 
 /**
- * Represents a singly-linked node for a linked List.
+ * Represents a singly-linked node for a linked list.
  */
 public class Node {
 
@@ -13,7 +13,7 @@ public class Node {
   /**
    * Constructor for the Node class
    * @param data The data stored in the node
-   * @param nextNode A reference to the next Node, if any.
+   * @param nextNode A reference to the next node, if any.
    */
   public Node(String data, Node nextNode) {
     this.data = data;
@@ -38,7 +38,7 @@ public class Node {
 
   /**
    * Sets the next Node.
-   * @param nextNode The next Node in the list. This will be null if the current Node is to be the end of the list.
+   * @param nextNode The next Node in the list. This will be null if the current node is to be the end of the list.
    */
   public void setNextNode(Node nextNode) {
     this.nextNode = nextNode;

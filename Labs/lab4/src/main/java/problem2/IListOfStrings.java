@@ -1,7 +1,7 @@
 package problem2;
 
 /**
- * A List represents an ordered, mutable collection of Strings.
+ * A list represents an ordered, mutable collection of strings.
  */
 public interface IListOfStrings {
 
@@ -51,8 +51,8 @@ public interface IListOfStrings {
   IListOfStrings removeDuplicates();
 
   /**
-   * Creates an empty list.
-   * @return An empty list.
+   * Adds a piece of data to the list
+   * @param data The data to add
    */
   void add(String data);
 }

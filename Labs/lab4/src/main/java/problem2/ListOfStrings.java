@@ -134,8 +134,8 @@ public class ListOfStrings implements IListOfStrings {
   }
 
   /**
-   * Add an item to the list.
-   * @param data The item to add.
+   * Adds a piece of data to the list
+   * @param data The data to add
    */
   @Override
   public void add(String data) {

@@ -1,22 +1,25 @@
 package problem1;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 /**
  * Represents a CourseCatalog ADT, which is implemented using the array as the underlying data
  * structure.
  */
 public class CourseCatalog implements ICourseCatalog {
 
-  private Course[] catalog;
+  private Course[] courses;
   private int numOfCourses;
-  private static int DEFAULT_NUM_OF_SLOTS = 10;
-  private static int COURSE_NOT_EXIST = -1;
+  private static final int DEFAULT_NUM_OF_SLOTS = 5;
+  private static final int COURSE_NOT_EXIST = -1;
 
   /**
    * Constructor for the CourseCatalog class. Initializes the CourseCatalog object with no courses
    * and with a course array with the default number of slots
    */
   public CourseCatalog() {
-    this.catalog = new Course[DEFAULT_NUM_OF_SLOTS];
+    this.courses = new Course[DEFAULT_NUM_OF_SLOTS];
     this.numOfCourses = 0;
   }
 
@@ -26,10 +29,10 @@ public class CourseCatalog implements ICourseCatalog {
    */
   @Override
   public void append(Course course) {
-    if (this.OverLength()) {
+    if (this.overLength()) {
       this.resize();
     }
-    this.catalog[this.numOfCourses] = course;
+    this.courses[this.numOfCourses] = course;
     this.numOfCourses++;
   }
 
@@ -37,10 +40,10 @@ public class CourseCatalog implements ICourseCatalog {
    * Increases the size of the data array.
    */
   private void resize() {
-    int newSize = this.catalog.length + DEFAULT_NUM_OF_SLOTS;
+    int newSize = this.courses.length + DEFAULT_NUM_OF_SLOTS;
     Course[] newList = new Course[newSize];
-    this.copyArray(this.catalog, newList);
-    this.catalog = newList;
+    this.copyArray(this.courses, newList);
+    this.courses = newList;
   }
 
   /**
@@ -58,8 +61,8 @@ public class CourseCatalog implements ICourseCatalog {
    * Helper function that checks if there is no room in the data array to add a new item.
    * @return true if there is no room to add a new item, false otherwise
    */
-  private boolean OverLength() {
-    return this.numOfCourses + 1 > this.catalog.length;
+  private boolean overLength() {
+    return this.numOfCourses + 1 > this.courses.length;
   }
 
   /**
@@ -74,7 +77,7 @@ public class CourseCatalog implements ICourseCatalog {
     if (!isFound) {
       throw new CourseNotFoundException();
     } else {
-      this.shiftDown(this.catalog, indexToRemove + 1);
+      this.shiftDown(this.courses, indexToRemove + 1);
       this.numOfCourses--;
     }
   }
@@ -111,7 +114,7 @@ public class CourseCatalog implements ICourseCatalog {
   @Override
   public int indexOf(Course course) {
     for (int i = 0; i < this.numOfCourses; i++) {
-      if (course.equals(this.catalog[i])) {
+      if (course.equals(this.courses[i])) {
         return i;
       }
     }
@@ -136,13 +139,13 @@ public class CourseCatalog implements ICourseCatalog {
   @Override
   public Course get(int index) throws InvalidIndexException {
     this.checkBoundary(index);
-    return this.catalog[index];
+    return this.courses[index];
   }
 
   /**
    * Checks that the given index is in the valid boundary.
    * @param index The index to check
-   * @throws InvalidIndexException if the index is invalid.
+   * @throws InvalidIndexException if the index does not exist
    */
   private void checkBoundary(int index) throws InvalidIndexException {
     if (index < 0 || index >= this.numOfCourses) {
@@ -157,5 +160,69 @@ public class CourseCatalog implements ICourseCatalog {
   @Override
   public boolean isEmpty() {
     return this.numOfCourses == 0;
+  }
+
+  /**
+   * Helper function that checks if this array of courses have the same courses as the given array
+   * of courses. Null items are excluded.
+   * @param that The array of courses to compared to
+   * @return true if both arrays contain the same courses in the same order, false otherwise.
+   */
+  private boolean sameCourses(Course[] that) {
+    for(int i = 0; i < this.numOfCourses; i++) {
+      if(!this.courses[i].equals(that[i])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /**
+   * Checks if two objects are equal
+   * @param o the object to compare this to
+   * @return true if these two objects are equal, false otherwise.
+   */
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CourseCatalog that = (CourseCatalog) o;
+    return this.numOfCourses == that.numOfCourses && this.sameCourses(that.courses);
+  }
+
+  /**
+   * Gets a hash code value for the object.
+   * @return a hash code value for the object.
+   */
+  @Override
+  public int hashCode() {
+    int result = Objects.hash(this.numOfCourses);
+    result = 31 * result;
+    for (int i = 0; i < this.numOfCourses; i++) {
+      result += 31 * Objects.hashCode(this.courses[i]);
+    }
+    return result;
+  }
+
+  /**
+   * Creates a string representation of the CourseCatalog
+   * @return a string representation of the CourseCatalog.
+   */
+  @Override
+  public String toString() {
+    String stringOfCourses = "";
+    for (int i = 0; i < this.numOfCourses; i++) {
+      stringOfCourses += this.courses[i].toString() + ", ";
+    }
+    if (!this.isEmpty()) {
+      stringOfCourses = stringOfCourses.substring(0, stringOfCourses.length() - ", ".length());
+    }
+    return "CourseCatalog: " +
+        "numOfCourses = " + this.numOfCourses +
+        ", courses = {" + stringOfCourses + "}";
   }
 }

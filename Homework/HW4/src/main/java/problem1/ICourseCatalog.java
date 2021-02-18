@@ -1,5 +1,8 @@
 package problem1;
 
+/**
+ * An ADT called CourseCatalog represents an order, mutable collection.
+ */
 public interface ICourseCatalog {
 
   /**
@@ -45,7 +48,7 @@ public interface ICourseCatalog {
 
   /**
    * Checks if the course catalog is empty
-   * @return
+   * @return true if the course catalog is empty, false otherwise
    */
   boolean isEmpty();
 }

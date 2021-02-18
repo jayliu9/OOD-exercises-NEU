@@ -3,6 +3,6 @@ package problem1;
 public class CourseNotFoundException extends Exception {
 
   public CourseNotFoundException() {
-    super();
+    super("The course is not found!");
   }
 }

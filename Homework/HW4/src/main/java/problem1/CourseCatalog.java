@@ -1,6 +1,5 @@
 package problem1;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -13,6 +12,7 @@ public class CourseCatalog implements ICourseCatalog {
   private int numOfCourses;
   private static final int DEFAULT_NUM_OF_SLOTS = 5;
   private static final int COURSE_NOT_EXIST = -1;
+  private String a;
 
   /**
    * Constructor for the CourseCatalog class. Initializes the CourseCatalog object with no courses
@@ -203,7 +203,7 @@ public class CourseCatalog implements ICourseCatalog {
     int result = Objects.hash(this.numOfCourses);
     result = 31 * result;
     for (int i = 0; i < this.numOfCourses; i++) {
-      result += 31 * Objects.hashCode(this.courses[i]);
+      result += 31 * Objects.hash(this.courses[i]);
     }
     return result;
   }

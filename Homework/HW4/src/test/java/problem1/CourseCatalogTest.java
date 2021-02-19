@@ -62,9 +62,10 @@ public class CourseCatalogTest {
     aCatalog.remove(sameMath);
     Course sameChemistry = new Course("Chemistry", "A", 7);
     Course sameArt = new Course("Art", "A", 9);
-    assertEquals(sameChemistry, aCatalog.get(0));
-    assertEquals(sameArt, aCatalog.get(1));
-    assertEquals(2, aCatalog.count());
+    ICourseCatalog test = new CourseCatalog();
+    test.append(sameChemistry);
+    test.append(sameArt);
+    assertEquals(test, aCatalog);
   }
 
   @Test

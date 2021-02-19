@@ -1,12 +1,9 @@
 package problem2;
 
+/**
+ * A Set represents an unordered, immutable collection.
+ */
 public interface ISet {
-
-  /**
-   * Creates an empty set
-   * @return An empty set
-   */
-  Set emptySet();
 
   /**
    * Checks if the set is empty

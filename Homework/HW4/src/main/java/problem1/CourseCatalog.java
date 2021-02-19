@@ -12,7 +12,6 @@ public class CourseCatalog implements ICourseCatalog {
   private int numOfCourses;
   private static final int DEFAULT_NUM_OF_SLOTS = 5;
   private static final int COURSE_NOT_EXIST = -1;
-  private String a;
 
   /**
    * Constructor for the CourseCatalog class. Initializes the CourseCatalog object with no courses

@@ -1,8 +1,8 @@
 package problem1;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The class represents a non-profit.
@@ -10,7 +10,7 @@ import java.util.Objects;
 public class NonProfit {
 
   private String name;
-  private List<Donation> donations;
+  private Set<Donation> donations;
 
   /**
    * Constructor for the NonProfit class
@@ -18,7 +18,7 @@ public class NonProfit {
    */
   public NonProfit(String name) {
     this.name = name;
-    this.donations = new LinkedList<Donation>();
+    this.donations = new HashSet<>();
   }
 
   /**
@@ -65,7 +65,7 @@ public class NonProfit {
    * Gets all the donations made to the non-profit.
    * @return All the donations made to the non-profit.
    */
-  public List<Donation> getDonations() {
+  public Set<Donation> getDonations() {
     return this.donations;
   }
 

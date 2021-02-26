@@ -38,8 +38,8 @@ public class MonthlyDonation extends AbstractDonation {
   @Override
   protected boolean isProcessedInYear(int year) {
     int yearOfCreation = this.getCreationTime().getYear();
-    int yearOfCancellation = this.cancellationTime.getYear();
-    if (yearOfCreation > year || (!this.isNullCancellationTime() && yearOfCancellation < year)) {
+    if (yearOfCreation > year ||
+        (!this.isNullCancellationTime() && this.cancellationTime.getYear() < year)) {
       return false;
     }
     return true;
@@ -75,11 +75,17 @@ public class MonthlyDonation extends AbstractDonation {
     if (!isProcessedInYear(year)) {
       return 0;
     }
-    int yearOfCancellation = this.cancellationTime.getYear();
-    long numOfActiveMonths =
-        (this.isNullCancellationTime() || yearOfCancellation > year) ?
-        this.getNumberOfMonths(this.getCreationTime()) :
-        this.getNumberOfMonths(this.getCreationTime(), this.cancellationTime);
+    long numOfActiveMonths;
+    int yearOfCreation = this.getCreationTime().getYear();
+    if (this.isNullCancellationTime() || this.cancellationTime.getYear() > year) {
+      if (yearOfCreation == year) {
+        numOfActiveMonths = getNumberOfMonths(this.getCreationTime());
+      } else {
+        numOfActiveMonths = MONTH_IN_YEAR - 1;
+      }
+    } else {
+      numOfActiveMonths = this.getNumberOfMonths(this.getCreationTime(), this.cancellationTime);
+    }
     return (numOfActiveMonths + 1) * this.getAmount();
   }
 

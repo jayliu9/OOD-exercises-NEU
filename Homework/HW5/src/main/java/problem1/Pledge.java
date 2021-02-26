@@ -12,8 +12,8 @@ public class Pledge extends AbstractDonation {
 
   /**
    * Constructor for the Pledge class.
-   * @param amount The amount
-   * @param creationTime
+   * @param amount The amount in the pledge
+   * @param creationTime The creation time of the pledge
    */
   public Pledge(long amount, LocalDateTime creationTime) {
     super(amount, creationTime);

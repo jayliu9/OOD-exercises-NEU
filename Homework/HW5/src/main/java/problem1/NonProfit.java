@@ -23,7 +23,7 @@ public class NonProfit {
 
   /**
    * Receives a donation made to the non-profit.
-   * @param donation
+   * @param donation The donation to receive
    */
   public void receive(Donation donation) {
     this.donations.add(donation);

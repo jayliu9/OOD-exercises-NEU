@@ -1,7 +1,14 @@
 package problem1;
 
-
+/**
+ * Required operations for priority queue (PQ) of strings
+ */
 public interface IPriorityQueue {
+
+  /**
+   * Creates an empty PQ
+   * @return An empty PQ
+   */
   static IPriorityQueue createEmpty() {
     return new PriorityQueue();
   }
@@ -31,5 +38,5 @@ public interface IPriorityQueue {
    * Gets a copy of the PQ without the element with the highest priority
    * @return A copy of the PQ without the element with the highest priority
    */
-  PriorityQueue pop() throws EmptyPriorityQueueException;
+  IPriorityQueue pop() throws EmptyPriorityQueueException;
 }

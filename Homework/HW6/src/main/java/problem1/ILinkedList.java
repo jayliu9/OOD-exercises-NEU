@@ -1,5 +1,8 @@
 package problem1;
 
+/**
+ * Required operations for a linked list of strings
+ */
 public interface ILinkedList {
 
   /**

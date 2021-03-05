@@ -1,5 +1,7 @@
 package problem1;
 
+import java.util.Objects;
+
 public class PriorityQueue implements IPriorityQueue {
 
   private ILinkedList front;
@@ -63,10 +65,47 @@ public class PriorityQueue implements IPriorityQueue {
    * @throws EmptyPriorityQueueException if the PQ is empty
    */
   @Override
-  public PriorityQueue pop() throws EmptyPriorityQueueException {
+  public IPriorityQueue pop() throws EmptyPriorityQueueException {
     if (this.isEmpty()) {
       throw new EmptyPriorityQueueException("Called pop() on empty priority queue!");
     }
     return new PriorityQueue(this.front.getRest());
+  }
+
+  /**
+   * Checks if two objects are equal
+   * @param o the object to compare this to
+   * @return true if these two objects are equal, false otherwise.
+   */
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    PriorityQueue that = (PriorityQueue) o;
+    return Objects.equals(this.front, that.front);
+  }
+
+  /**
+   * Gets a hash code value for the object.
+   * @return a hash code value for the object.
+   */
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.front);
+  }
+
+  /**
+   * Creates a string representation of the PriorityQueue.
+   * @return a string representation of the PriorityQueue.
+   */
+  @Override
+  public String toString() {
+    return "PriorityQueue{" +
+        "front=" + this.front +
+        '}';
   }
 }

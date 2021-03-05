@@ -3,7 +3,7 @@ package problem1;
 import java.util.Objects;
 
 /**
- * Represents a non-empty linked list of String.
+ * Represents a non-empty linked list of strings.
  */
 public class ElementNode implements ILinkedList {
 
@@ -101,9 +101,9 @@ public class ElementNode implements ILinkedList {
   @Override
   public String toString() {
     return "ElementNode{" +
-        "priority=" + priority +
-        ", item='" + item + '\'' +
-        ", rest=" + rest +
+        "priority=" + this.priority +
+        ", item='" + this.item + '\'' +
+        ", rest=" + this.rest +
         '}';
   }
 }

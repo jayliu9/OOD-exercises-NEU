@@ -2,6 +2,9 @@ package problem1;
 
 import java.util.Objects;
 
+/**
+ * Represents a priority queue (PQ) of strings.
+ */
 public class PriorityQueue implements IPriorityQueue {
 
   private ILinkedList front;

@@ -31,12 +31,14 @@ public interface IPriorityQueue {
    * Gets the value in the PQ that has the highest priority. In this method, when multiple elements
    * in the PQ have the same priority, the element that enters the queue first will be got first.
    * @return The value in the PQ that has the highest priority.
+   * @throws EmptyPriorityQueueException if the PQ is empty.
    */
   String peek() throws EmptyPriorityQueueException;
 
   /**
    * Gets a copy of the PQ without the element with the highest priority
    * @return A copy of the PQ without the element with the highest priority
+   * @throws EmptyPriorityQueueException if the PQ is empty.
    */
   IPriorityQueue pop() throws EmptyPriorityQueueException;
 }

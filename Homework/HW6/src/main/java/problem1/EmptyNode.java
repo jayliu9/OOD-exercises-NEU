@@ -1,7 +1,7 @@
 package problem1;
 
 /**
- * Represents an empty linked list of String.
+ * Represents an empty linked list of strings.
  */
 public class EmptyNode implements ILinkedList {
 
@@ -77,8 +77,8 @@ public class EmptyNode implements ILinkedList {
   }
 
   /**
-   * Returns a string representation of the object.
-   * @return a string representation of the object.
+   * Returns a string representation of the EmptyNode.
+   * @return a string representation of the EmptyNode.
    */
   @Override
   public String toString() {

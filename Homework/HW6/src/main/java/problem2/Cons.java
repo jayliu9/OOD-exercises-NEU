@@ -70,9 +70,9 @@ public class Cons implements IMultiset {
   }
 
   /**
-   * Checks if the multiset contains a given item
-   * @param item The string to check
-   * @return true if the multiset contains a given string, false otherwise
+   * Checks if two objects are equal
+   * @param o the object to compare this to
+   * @return true if these two objects are equal, false otherwise.
    */
   @Override
   public boolean equals(Object o) {

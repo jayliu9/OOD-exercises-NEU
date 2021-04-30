@@ -6,7 +6,12 @@ import java.util.Scanner;
 
 public class ReservationSystem {
 
-  public static void main(String[] args) {
+  public static final String END = "done";
+  public static final String RESERVE = "reserve";
+  public static final String SHOW = "show";
+
+  public static void main(String[] args) throws NoAccessibleRowException {
+
     List<Integer> rowsForWheelchair = new ArrayList<>();
     rowsForWheelchair.add(1);
     rowsForWheelchair.add(5);
@@ -16,12 +21,29 @@ public class ReservationSystem {
 
     System.out.println("What would you like to do?");
     String cmd = console.nextLine();
+    ReservationsService r = new ReservationsService();
 
-    while (!cmd.equals(Constants.END)) {
+    while (!cmd.equals(END)) {
       try {
         String[] tokens = cmd.split(" ");
-        ReservationsService.call(tokens, theater);
-      } catch (NotEnoughSeatsException | InvalidInputException e) {
+        if (tokens[0].equals(RESERVE) && tokens.length > 1 && tokens[1].matches("^[0-9]*$")) {
+          Integer neededSeats = Integer.valueOf(tokens[1]);
+          r.checkNeededSeats(theater, neededSeats);
+
+          System.out.println("Do you need wheelchair accessible seats?");
+          String answer = console.nextLine();
+          r.checkAnswer(answer);
+
+          System.out.println("What is your name?");
+          String name = console.nextLine();
+
+          r.reserve(theater, neededSeats, answer, name);
+        } else if (tokens[0].equals(SHOW)) {
+          r.show(theater);
+        } else {
+          System.out.println("Invalid Input! Please try again!");
+        }
+      } catch (NotEnoughSeatsException | InvalidAnswerException | InvalidNumOfSeatsException e) {
         System.out.println(e.getMessage());
       }
       System.out.println("What would you like to do?");

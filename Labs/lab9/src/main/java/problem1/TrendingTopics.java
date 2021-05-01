@@ -21,5 +21,4 @@ public class TrendingTopics {
     return topicsList.stream()
         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
   }
-
 }

@@ -30,36 +30,36 @@ public class Vehicle {
   }
 
   /**
-   * Getter for the property ’make’
+   * Getter for the property 'make'
    *
-   * @return value for property ’make’ (String)
+   * @return value for property 'make' (String)
    */
   public String getMake() {
     return make;
   }
 
   /**
-   * Getter for the property ’model’
+   * Getter for the property 'model'
    *
-   * @return value for property ’model’ (String)
+   * @return value for property 'model' (String)
    */
   public String getModel() {
     return model;
   }
 
   /**
-   * Getter for the property ’year’
+   * Getter for the property 'year'
    *
-   * @return value for property ’year’ (Integer in the range 1950- 2020)
+   * @return value for property 'year' (Integer in the range 1950- 2020)
    */
   public Integer getYear() {
     return year;
   }
 
   /**
-   * Getter for the property ’vehicleColor’
+   * Getter for the property 'vehicleColor'
    *
-   * @return value for property ’vehicleColor’ (Color)
+   * @return value for property 'vehicleColor' (Color)
    */
   public Color getVehicleColor() {
     return vehicleColor;

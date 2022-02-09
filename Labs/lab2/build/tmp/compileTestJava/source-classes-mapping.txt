@@ -1,0 +1,10 @@
+problem1/RunnerTest.java
+ problem1.RunnerTest
+problem1/AthleteTest.java
+ problem1.AthleteTest
+problem1/NameTest.java
+ problem1.NameTest
+problem1/BaseballPlayerTest.java
+ problem1.BaseballPlayerTest
+problem2/PosnTest.java
+ problem2.PosnTest
